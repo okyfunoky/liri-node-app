@@ -18,7 +18,7 @@ switch (requestType) {
         concert(args);
         break;
     case "spotify-this-song":
-        spotifySearch();
+        spotifySearch(args);
         break;
     case "movie-this":
         movie(args);
@@ -34,22 +34,46 @@ function concert(bandName) {
     let queryUrl = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp"
     axios.get(queryUrl).then(
         function(response){
-            console.log(response);
+            //let val = JSON.stringify(response);
+            writeLog(response);
         }
     ).catch(function(err){
         throw err;
     })
 }
 
-function spotifySearch() {
+// * Artist(s)
 
+// * The song's name
+
+// * A preview link of the song from Spotify
+
+// * The album that the song is from
+
+// * If no song is provided then your program will default to "The Sign" by Ace of Base.
+
+
+function spotifySearch(song) {
+    spotify
+    .search({ type: 'track', query: song })
+    .then(function(response) {
+      //console.log(response.tracks.items[0]);
+      console.log("Album: " + response.tracks.items[0].album.name);
+      console.log("Artist: " + response.tracks.items[0].artists[0].name);
+      console.log("Link: " + response.tracks.items[0].preview_url);
+      console.log("Name: " + response.tracks.items[0].name);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 }
 
 function movie(movieName) {
     let queryUrl = `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
     axios.get(queryUrl).then(
         function(response){
-            console.log(response);
+            
+            writeLog(response);
         }
     ).catch(function(err){
         throw err;
@@ -59,20 +83,24 @@ function movie(movieName) {
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
 
-        // If the code experiences any errors it will log the error to the console.
         if (error) {
-          return console.log(error);
+          return writeLog(error);
         }
-      
-        // We will then print the contents of data
+
+        writeLog(data);
         console.log(data);
-      
-        // Then split it by commas (to make it more readable)
-        var dataArr = data.split(",");
-      
-        // We will then re-display the content as an array for later use.
-        console.log(dataArr);
       
       });
       
+}
+
+function writeLog(input){
+    logValue = input
+    console.log(logValue);
+    fs.appendFile("log.txt", logValue, function(err) {
+        
+        if (err) {
+          console.log(err);
+        }
+      });
 }
