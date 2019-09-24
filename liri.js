@@ -34,26 +34,20 @@ function concert(bandName) {
     let queryUrl = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp"
     axios.get(queryUrl).then(
         function(response){
-            //let val = JSON.stringify(response);
             writeLog(response);
+            writeLog("Venue Name:" + response.data[0].venue.city);
+            writeLog("Venue Location:" + response.data[0].venue.name);
+            writeLog("Date: " + response.data[0].datetime);
         }
     ).catch(function(err){
         throw err;
     })
 }
 
-// * Artist(s)
-
-// * The song's name
-
-// * A preview link of the song from Spotify
-
-// * The album that the song is from
-
-// * If no song is provided then your program will default to "The Sign" by Ace of Base.
-
-
 function spotifySearch(song) {
+    if(!song){
+        song = "All the Small Things"
+    }
     spotify
     .search({ type: 'track', query: song })
     .then(function(response) {
@@ -69,11 +63,20 @@ function spotifySearch(song) {
 }
 
 function movie(movieName) {
+    if(!movieName){
+        movieName = "Mr. Nobody"
+    }
     let queryUrl = `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
     axios.get(queryUrl).then(
         function(response){
-            
-            writeLog(response);
+            writeLog("Title: " + response.data.Title);
+            writeLog("Year: " + response.data.Year);
+            writeLog("Rating:" + response.data.Rated);
+            writeLog("Country:"+ response.data.Country);
+            writeLog("Languages: " + response.data.Language);
+            writeLog("Plot: " + response.data.Plot);
+            writeLog("Cast:" + response.data.Actors);
+            writeLog("Rotten Tomatoes: " + response.data.Ratings[1].Value);
         }
     ).catch(function(err){
         throw err;
