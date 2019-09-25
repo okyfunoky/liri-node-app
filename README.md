@@ -34,6 +34,7 @@ LIRI accepts four commands:
 3) concert-this "band name"
     ex: "node .\liri.js concert-this Muse"
 4) do-what-it-says 
+    ex: node .\liri.js do-what-it-says
 
 1) Searches for the top spotify song of the song name specified and returns some details, including a preview link
     ex: ![spotify](https://user-images.githubusercontent.com/38290836/65622720-236f9f00-df7b-11e9-81c4-ad194ac4966d.PNG)
@@ -44,5 +45,8 @@ LIRI accepts four commands:
 3) Searches the "BandsInTown" api and returns the next concert for the specified band.
     ex: ![concert](https://user-images.githubusercontent.com/38290836/65622736-2bc7da00-df7b-11e9-84f5-88208badc1fe.PNG)
 
-4) ????
+4) Runs a command in a file.
+
+    ex: ![dowhat](https://user-images.githubusercontent.com/38290836/65625704-37b69a80-df81-11e9-9060-53a5cc7d990a.PNG)
+
 

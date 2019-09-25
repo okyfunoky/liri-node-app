@@ -74,3 +74,41 @@ Plot: During a preview tour, a theme park suffers a major power breakdown that a
 Cast:Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough
 Rotten Tomatoes: 91%
 Country:USA
+Command: Cocert-This
+Input:
+Command: Cocert-This
+Input:muse
+Venue Name:Mexico City
+Venue Location:Foro Sol
+Date: Wed Oct 02 2019 20:30:12 GMT-0700
+Command: Cocert-This
+Input:muse
+Venue Name:Mexico City
+Venue Location:Foro Sol
+Date: Wed Oct 02 2019 20:30:12 GMT-0700
+Command: Cocert-This
+Input:muse
+Venue Name:Mexico City
+Venue Location:Foro Sol
+Date: Wed Oct 02 2019 20:30:12 GMT-0700
+Command: Do-What-It-Says
+Input:bandName
+spotify-this-song I want it that way
+Command: Do-What-It-Says
+Input:bandName
+Command: Spotify-This
+Input:I,want,it,that,way
+spotify-this-song I want it that way
+Album: The Hits--Chapter One
+Artist: Backstreet Boys
+Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=3166350fbb794059a84b7ad24575c649
+Name: I Want It That Way
+Command: Do-What-It-Says
+Input:bandName
+Command: Spotify-This
+Input:I,want,it,that,way
+spotify-this-song I want it that way
+Album: The Hits--Chapter One
+Artist: Backstreet Boys
+Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=3166350fbb794059a84b7ad24575c649
+Name: I Want It That Way

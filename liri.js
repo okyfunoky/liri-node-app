@@ -8,7 +8,7 @@ const fs = require('fs');
 const chalk = require("chalk"),
     ctx = new chalk.constructor({ level: 3 }); // 3 for Truecolor: https://github.com/chalk/chalk#chalklevel
 
-const envPath = './.env'
+const envPath = './.env';
 let spotifyUsable = false;
 try {
     if (fs.existsSync(envPath)) {
@@ -25,27 +25,31 @@ try {
 requestType = process.argv[2];
 args = process.argv.slice(3).join(" ");
 
-switch (requestType) {
-    case "concert-this":
-        concert(args);
-        break;
-    case "spotify-this-song":
-        if (spotifyUsable) {
-            spotifySearch(args);
-        } else {
-            writeLog("Configure your spotify key to use this feature of the app. See README.md for details")
-        }
-        break;
-    case "movie-this":
-        movie(args);
-        break;
-    case "do-what-it-says":
-        doWhatItSays();
-        break;
-    default:
-        writeHelp();
-        break;
+function run(){
+    switch (requestType) {
+        case "concert-this":
+            concert(args);
+            break;
+        case "spotify-this-song":
+            if (spotifyUsable) {
+                spotifySearch(args);
+            } else {
+                writeLog("Configure your spotify key to use this feature of the app. See README.md for details")
+            }
+            break;
+        case "movie-this":
+            movie(args);
+            break;
+        case "do-what-it-says":
+            doWhatItSays();
+            break;
+        default:
+            writeHelp();
+            break;
+    }
+    
 }
+
 
 function concert(bandName) {
     let queryUrl = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp"
@@ -73,7 +77,6 @@ function spotifySearch(song) {
     spotify
         .search({ type: 'track', query: song })
         .then(function (response) {
-            //console.log(response.tracks.items[0]);
             writeLog("Album: " + response.tracks.items[0].album.name);
             writeLog("Artist: " + response.tracks.items[0].artists[0].name);
             writeLog("Link: " + response.tracks.items[0].preview_url);
@@ -90,6 +93,7 @@ function movie(movieName) {
     if (!movieName) {
         movieName = "Mr. Nobody"
     }
+
     let queryUrl = `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
     axios.get(queryUrl).then(
         function (response) {
@@ -111,6 +115,12 @@ function doWhatItSays() {
     writeLog("Command: Do-What-It-Says");
     writeLog("Input:" + "bandName");
     fs.readFile("random.txt", "utf8", function (error, data) {
+
+        let command = data.split(" ")[0];
+        args = data.split(" ").splice(1);
+        
+        requestType = command;
+        run();
 
         if (error) {
             return writeLog(error);
@@ -153,3 +163,5 @@ function writeLog(input) {
     });
 
 }
+
+run();
