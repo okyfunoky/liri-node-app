@@ -18,3 +18,4 @@ Venue Location:Foro Sol
 Date: Wed Oct 02 2019 20:30:12 GMT-0700
 Configure your spotify key to use this feature of the app. See README.md for details
 Configure your spotify key to use this feature of the app. See README.md for details
+Configure your spotify key to use this feature of the app. See README.md for details

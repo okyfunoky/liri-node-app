@@ -5,6 +5,9 @@ const Spotify = require('node-spotify-api');
 const keys = require('./keys.js');
 const fs = require('fs');
 
+const chalk = require("chalk"),
+    ctx = new chalk.constructor({ level: 3 }); // 3 for Truecolor: https://github.com/chalk/chalk#chalklevel
+
 const envPath = './.env'
 let spotifyUsable = false;
 try {
@@ -14,7 +17,7 @@ try {
             secret: keys.spotify.secret
         });
     }
-} catch(err){
+} catch (err) {
     writeLog("Env file unavailable, spotify is unusable")
 }
 
@@ -26,9 +29,9 @@ switch (requestType) {
         concert(args);
         break;
     case "spotify-this-song":
-        if(spotifyUsable){
+        if (spotifyUsable) {
             spotifySearch(args);
-        }else{
+        } else {
             writeLog("Configure your spotify key to use this feature of the app. See README.md for details")
         }
         break;
@@ -39,6 +42,7 @@ switch (requestType) {
         doWhatItSays();
         break;
     default:
+        writeHelp();
         break;
 }
 
@@ -117,9 +121,28 @@ function doWhatItSays() {
 
 }
 
+function writeHelp() {
+    console.log(ctx.keyword('green')("Here is what I can do!"));
+    //Spotify Help
+    console.log(ctx.keyword('orange')(`spotify-this-song "song title"\n`,
+        ctx.keyword('green')(`ex: "node .\liri.js spotify-this-song Knights of Cydonia"\n`)));
+    //Movie Help
+    console.log(ctx.keyword('orange')(`movie-this "movie title"\n`,
+        ctx.keyword('green')(`ex: "node .\liri.js movie-this Jurassic Park"\n`)));
+    //Concert Help
+    console.log(ctx.keyword('orange')(`concert-this "band name"\n`,
+        ctx.keyword('green')(`ex: "node .\liri.js concert-this Muse"\n`)));
+
+    //Do-What-It-Says-Help
+    console.log(ctx.keyword('orange')(`movie-this "movie title"\n`,
+        ctx.keyword('green')(`ex: "node .\liri.js movie-this Jurassic Park"\n`)));
+
+}
+
+
 function writeLog(input) {
     logValue = input + "\n"
-    console.log(logValue);
+    console.log(ctx.keyword('green')(logValue));
 
     fs.appendFile("log.txt", logValue, function (err) {
 
