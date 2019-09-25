@@ -16,6 +16,7 @@ try {
             id: keys.spotify.id,
             secret: keys.spotify.secret
         });
+        spotifyUsable = true;
     }
 } catch (err) {
     writeLog("Env file unavailable, spotify is unusable")
@@ -84,7 +85,7 @@ function spotifySearch(song) {
 }
 
 function movie(movieName) {
-    writeLog("Command: movie-This");
+    writeLog("Command: movie-this");
     writeLog("Input:" + movieName);
     if (!movieName) {
         movieName = "Mr. Nobody"

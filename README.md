@@ -10,6 +10,7 @@ https://nodejs.org/en/
 After you've installed node, you should have NPM installed. In the root directory of this repository, run "npm install" to download the required packages for this application. 
 For reference, these are the required packages at the time of this writing:
     "axios": "^0.19.0",
+    "chalk": "^2.4.2",
     "dotenv": "^8.1.0",
     "moment": "^2.24.0",
     "node-spotify-api": "^1.1.1"
@@ -35,10 +36,13 @@ LIRI accepts four commands:
 4) do-what-it-says 
 
 1) Searches for the top spotify song of the song name specified and returns some details, including a preview link
+    ex: ![spotify](https://user-images.githubusercontent.com/38290836/65622720-236f9f00-df7b-11e9-81c4-ad194ac4966d.PNG)
 
 2) Searches OMDB and returns releveant details for the movie selected
+    ex: ![movie](https://user-images.githubusercontent.com/38290836/65622729-27032600-df7b-11e9-8df4-e1d80b99d606.PNG)
 
 3) Searches the "BandsInTown" api and returns the next concert for the specified band.
+    ex: ![concert](https://user-images.githubusercontent.com/38290836/65622736-2bc7da00-df7b-11e9-84f5-88208badc1fe.PNG)
 
 4) ????
 

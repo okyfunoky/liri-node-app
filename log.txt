@@ -19,3 +19,58 @@ Date: Wed Oct 02 2019 20:30:12 GMT-0700
 Configure your spotify key to use this feature of the app. See README.md for details
 Configure your spotify key to use this feature of the app. See README.md for details
 Configure your spotify key to use this feature of the app. See README.md for details
+Configure your spotify key to use this feature of the app. See README.md for details
+Configure your spotify key to use this feature of the app. See README.md for details
+Configure your spotify key to use this feature of the app. See README.md for details
+Command: Spotify-This
+Input:Knights of Cydonia
+Album: Black Holes and Revelations
+Link: https://p.scdn.co/mp3-preview/d7624ec5f93b6d92c1836a95c40ecce463584f6e?cid=3166350fbb794059a84b7ad24575c649
+Artist: Muse
+Name: Knights of Cydonia
+Command: Cocert-This
+Input:
+Command: Cocert-This
+Input:muse
+Venue Name:Mexico City
+Date: Wed Oct 02 2019 20:30:12 GMT-0700
+Venue Location:Foro Sol
+Command: movie-This
+Input:Jurrasic Park
+Title: undefined
+Year: undefined
+Rating:undefined
+Country:undefined
+Languages: undefined
+Plot: undefined
+Cast:undefined
+Command: movie-this
+Input:
+Title: Mr. Nobody
+Year: 2009
+Rating:R
+Country:Belgium, Germany, Canada, France, USA, UK
+Languages: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Cast:Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Rotten Tomatoes: 66%
+Command: movie-this
+Input:Star Wars
+Title: Star Wars: Episode IV - A New Hope
+Year: 1977
+Rating:PG
+Country:USA
+Languages: English
+Plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+Cast:Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing
+Rotten Tomatoes: 93%
+Command: movie-this
+Input:Jurassic Park
+Title: Jurassic Park
+Year: 1993
+Rating:PG-13
+Languages: English, Spanish
+Plot: During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.
+Cast:Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough
+Rotten Tomatoes: 91%
+Country:USA
